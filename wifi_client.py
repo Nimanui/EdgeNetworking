@@ -1,6 +1,10 @@
 import socket
+import os
+from dotenv import load_dotenv, dotenv_values
 
-HOST = "192.168.1.192" # IP address of your Raspberry PI
+load_dotenv()
+
+HOST = os.getenv("IP_ADDRESS_PI") # IP address of your Raspberry PI
 PORT = 65432          # The port used by the server
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:

@@ -1,6 +1,8 @@
 document.getElementById("myButton").addEventListener("click", greeting);
 var server_port = 65432;
 var server_addr = "192.168.1.192"; // the IP address of your Raspberry Pi
+//var server_addr = process.env.IP_ADDRESS_PI;
+console.log(server_addr)
 
 function client(){
     const net = require('net');
