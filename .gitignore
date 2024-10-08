@@ -980,3 +980,4 @@
 /my-electron-app/node_modules/electron/dist/locales/zh-CN.pak
 /my-electron-app/node_modules/electron/dist/locales/zh-TW.pak
 /my-electron-app/node_modules/@types/node/zlib.d.ts
+Bluetooth-control/.DS_Store
