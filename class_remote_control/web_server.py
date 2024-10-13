@@ -37,7 +37,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                             "direction": "forward",
                             "speed": power_val,
                             "distance": 0.0,
-                            "temperature": 0.0
+                            "temperature": fc.cpu_temperature()
                         }
                         client.sendall(str(status).encode())
                     else:
