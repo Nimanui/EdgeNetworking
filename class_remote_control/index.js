@@ -18,22 +18,21 @@ function sendCommand(command) {
     client.on('data', (data) => {
         const response = data.toString();
         
-        if (command === "status") {
-            
+//        if (command === "status") {
+//
             try {
                 const jsonData = JSON.parse(response.replace(/'/g, '"'));
 
                 document.getElementById("direction").innerText = jsonData.direction;
                 document.getElementById("speed").innerText = jsonData.speed;
                 document.getElementById("distance").innerText = jsonData.distance;
-                document.getElementById("temperature").innerText = jsonData.temperature;
-                document.getElementById("battery").innerText = jsonData.battery;
+                document.getElementById("temperature").innerText = jsonData.temperature + "°C";
             } catch (e) {
                 alert(e)
                 document.getElementById("bluetooth").innerText = response;
             }
-        }
-        client.end();
+//        }
+//        client.end();
     });
 
     client.on('error', (err) => {

@@ -1,5 +1,6 @@
 from picarx import Picarx
 import socket
+import os
 
 HOST = "192.168.1.192"  # raspberry pi IP
 PORT = 65432           # port
@@ -15,6 +16,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
     try:
         px = Picarx()
+        temp = os.popen("vcgencmd measure_temp").readline()
+        temp_val = temp.replace("temp=", "").replace("'C\n", "")
         while True:
             client, client_info = s.accept()
             print("connected to:", client_info)
@@ -45,12 +48,18 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                         "direction": direction,
                         "speed": power_val,
                         "distance": 0.0,
-                        "temperature": 0.0,
+                        "temperature": temp_val,
                     }
                     client.sendall(str(status).encode())
                 else:
                     client.sendall(f"unknown command: {data}".encode())
-
+                status = {
+                    "direction": direction,
+                    "speed": power_val,
+                    "distance": 0.0,
+                    "temperature": temp_val,
+                }
+                client.sendall(str(status).encode())
                 print(f"executed command: {data}")
 
             except Exception as e:
