@@ -4,7 +4,9 @@ Repository for the Edge Networking lab for CS 437
 
 ## Code
 
-To get the Flutter app working with your Bluetooth, update the `device.name` in `MainPage.dart` with your device's hostname.
+- To get the Flutter app working with your Bluetooth, update the `device.name` in `MainPage.dart` with your device's hostname.
+- Add the java home to `gradle.properties` to build the project.
+- 
 
 ## Mobile
 
