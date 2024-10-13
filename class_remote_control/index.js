@@ -2,7 +2,7 @@ document.onkeydown = updateKey;
 document.onkeyup = resetKey;
 
 var server_port = 65432;
-var server_addr = "192.168.0.10";   // the IP address of your Raspberry PI
+var server_addr = "192.168.1.192";   // the IP address of your Raspberry PI
 
 // send commands to the raspberry pi server
 function sendCommand(command) {
@@ -27,6 +27,7 @@ function sendCommand(command) {
                 document.getElementById("speed").innerText = jsonData.speed;
                 document.getElementById("distance").innerText = jsonData.distance;
                 document.getElementById("temperature").innerText = jsonData.temperature;
+                document.getElementById("battery").innerText = jsonData.battery;
             } catch (e) {
                 alert(e)
                 document.getElementById("bluetooth").innerText = response;

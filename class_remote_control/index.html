@@ -32,14 +32,16 @@
     <div class="container">
         <div class="jumbotron text-center col-md-6">
             <span>&nbsp;&nbsp;</span> 
-            <span id="upArrow" style='font-size:50px; color:grey;'>&#8679;</span>
+            <span id="upArrow" style='font-size:50px; color:grey;' onclick="sendCommand('forward')">&#8679;</span>
             <br>
-            <span id="leftArrow" style='font-size:45px; color:grey;'>&#8678;</span>
+            <span id="leftArrow" style='font-size:45px; color:grey;' onclick="sendCommand('left')">&#8678;</span>
             <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
-            <span id="rightArrow" style='font-size:45px; color:grey;'>&#8680;</span>
+            <span id="rightArrow" style='font-size:45px; color:grey;' onclick="sendCommand('right')">&#8680;</span>
             <br>
             <span>&nbsp;&nbsp;</span> 
-            <span id="downArrow" style='font-size:50px; color:grey;'>&#8681;</span>
+            <span id="downArrow" style='font-size:50px; color:grey;' onclick="sendCommand('backward')">&#8681;</span>
+            <br>
+            <span id="stop" style='font-size:50px; color:grey;' onclick="sendCommand('stop')">STOP!</span>
         </div>
 
         <div class="jumbotron text-left col-md-6">
