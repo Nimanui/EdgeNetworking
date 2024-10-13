@@ -25,7 +25,6 @@ function sendCommand(command) {
 
                 document.getElementById("direction").innerText = jsonData.direction;
                 document.getElementById("speed").innerText = jsonData.speed;
-                document.getElementById("distance").innerText = jsonData.distance;
                 document.getElementById("temperature").innerText = jsonData.temperature + "°C";
             } catch (e) {
                 alert(e)
@@ -90,6 +89,7 @@ function updateKeyBoth(e) {
         sendCommand("rightCamera");
     } else if (e.keyCode === 90) { // start camera z
         document.getElementById("cameraFeed").src = "http://" + server_addr +":9000/mjpg"
+//        document.getElementById("cameraFeed2").source = "http://" + server_addr +":9000/mjpg"
         sendCommand("startCamera");
     } else if (e.keyCode === 88) { // stop camera x
         sendCommand("stopCamera");
