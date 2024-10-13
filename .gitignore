@@ -981,3 +981,4 @@
 /my-electron-app/node_modules/electron/dist/locales/zh-TW.pak
 /my-electron-app/node_modules/@types/node/zlib.d.ts
 **/.DS_Store
+**/node_modules/
