@@ -90,7 +90,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 status = {
                     "direction": direction,
                     "speed": power_val,
-                    "distance": 0.0,
                     "temperature": temp_val,
                 }
                 client.sendall(str(status).encode())
